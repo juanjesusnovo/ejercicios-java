@@ -9,6 +9,7 @@ public class Ejercicio8 {
         while (!entrada.hasNextInt()){
             entrada.nextLine();
             System.out.println("El dato introducido no es válido");
+        }
         int hora = entrada.nextInt();
         entrada.nextLine();
         int minuto = 0;
@@ -21,7 +22,6 @@ public class Ejercicio8 {
             } else {
                 try {
                     minuto = Integer.parseInt(x);
-                    entrada.nextLine();
                     int segundo = 0;
                     System.out.println("Introduce los segundos: ");
                     while (true) {
@@ -46,8 +46,8 @@ public class Ejercicio8 {
                 }
             }
         }
-        }
         System.out.println("La hora es: "+ tiempofinal.toString());
     }
+    }
 
-}
+
