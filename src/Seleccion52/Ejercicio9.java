@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Ejercicio9 {
     public static void main(String[] args) {
+        Ejercicio9 op = new Ejercicio9();
         Persona p1 = new Persona("1213737321");
         Cuenta[] cuentas = new Cuenta[3];
         cuentas[0] = new Cuenta("12390871247",0);
@@ -22,20 +23,34 @@ public class Ejercicio9 {
                 }
             }
         }
+        op.comprobar();
+        op.operacion();
         System.out.println(cuentas);
         System.out.println("Es moroso?"+moroso);
     }
     Scanner ingresar = new Scanner(System.in);
     Scanner cuenta = new Scanner(System.in);
-    public void accion (){
-        if (ingresar > 0){
-
+    float nuevoSaldo;
+    public void comprobar () {
+        System.out.println("Introduzca el ingreso/extraccion y la cuenta: ");
+        while (!ingresar.hasNextFloat()) {
+            System.out.println("La operacion introducida no es válida");
+            ingresar.nextLine();
         }
-        if (ingresar == 0){
-
+        ingresar.hasNextFloat();
+        while (!cuenta.hasNextFloat()) {
+            System.out.println("La cuenta introducida no es válida");
+            cuenta.nextLine();
         }
-        else{
-            break;
+        ingresar.hasNextFloat();
+    }
+    public void operacion() {
+        if (ingresar > 0) {
+            nuevoSaldo = cuentas[cuenta].getSaldo() + ingresar;
         }
+        if (ingresar < 0) {
+            nuevoSaldo = cuentas[cuenta].getSaldo() - ingresar;
+        }
+        cuentas[cuenta].setSaldo(nuevoSaldo);
     }
 }
