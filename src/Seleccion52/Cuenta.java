@@ -7,6 +7,12 @@ public class Cuenta {
         this.Numero = Numero;
         this.Saldo = Saldo;
     }
+    public void retirar(int dinero){
+        Saldo = Saldo - dinero;
+    }
+    public void depositar(int dinero){
+        Saldo = Saldo + dinero;
+    }
 
     public String getNumero() {
         return Numero;
