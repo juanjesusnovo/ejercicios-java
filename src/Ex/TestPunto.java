@@ -9,7 +9,7 @@ class TestPunto {
     Punto punto;
 
     @BeforeEach
-    void preparar(){
+    void preparar()throws GraficoException{
         Punto punto = new Punto(10, 40);
     }
 @Test

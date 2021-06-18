@@ -11,7 +11,7 @@ class TestGraficoCompuesto {
     Rectangulo rectangulo;
     GraficoCompuesto graficoCompuesto;
     @BeforeEach
-    void preparar(){
+    void preparar() throws GraficoException{
         Punto punto = new Punto(10,10);
         Circulo circulo = new Circulo(10,10,20);
         Rectangulo rectangulo = new Rectangulo(10,10,20,20);
