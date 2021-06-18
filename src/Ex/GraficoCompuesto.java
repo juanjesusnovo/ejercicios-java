@@ -20,11 +20,17 @@ public class GraficoCompuesto implements Grafico{
 
     @Override
     public void dibujar() {
-
+        for (Grafico graficos : grafic){
+            System.out.println(graficos);
+        }
     }
 
     @Override
     public boolean mover(int x, int y) {
-        return false;
+        boolean entra = true;
+        for (Grafico graficos : grafic){
+            if (!graficos.mover(x, y)) entra = false;
+        }
+        return entra;
     }
 }
